@@ -46,5 +46,17 @@ namespace StringIO_TextView
             }
         }
 
+        private void txtEdit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if(e.KeyChar == 13)
+            {
+                if (TextCheck())
+                {
+                    e.Handled = true;
+                    this.lblResult.Text = this.OrgStr + this.txtEdit.Text;
+                }
+            }
+        }
     }
 }
